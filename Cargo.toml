@@ -10,7 +10,7 @@ documentation = "https://docs.rs/fstree"
 readme = "README.md"
 description = "fstree - A blazing fast File System Tree command in Rust with smart file type icons."
 keywords = ["cli", "tree", "terminal", "visualization", "file-system-tree"]
-categories = ["cli", "tree", "command-line-utilities", "filesystem"]
+categories = ["command-line-utilities", "filesystem", "development-tools"]
 
 [[bin]]
 name = "fstree"
