@@ -105,15 +105,38 @@ my-project
 └── 📄 package.json
 ```
 
+### Example 5: Exclude Files/Folders
+
+```bash
+# Exclude single folder
+$ fstree -e node_modules
+.
+├── 📂 src
+│   └── 🦀 main.rs
+├── 📄 package.json
+└── 📝 README.md
+
+# Exclude multiple items
+$ fstree -e node_modules -e .git -e dist
+.
+├── 📂 src
+├── 📄 Cargo.toml
+└── 📝 README.md
+
+# Exclude with other options
+$ fstree -d 2 -a -e .vscode -e .github
+```
+
 ## ⚙️ Options Reference
 
-| Option            | Description        | Example            |
-| ----------------- | ------------------ | ------------------ |
-| `-p, --path PATH` | Target directory   | `fstree -p ./src`  |
-| `-d, --depth NUM` | Limit depth levels | `fstree -d 3`      |
-| `-a, --all`       | Show hidden files  | `fstree -a`        |
-| `-h, --help`      | Show help          | `fstree --help`    |
-| `-V, --version`   | Show version       | `fstree --version` |
+| Option                  | Description           | Example                  |
+| ----------------------- | --------------------- | ------------------------ |
+| `-p, --path PATH`       | Target directory      | `fstree -p ./src`        |
+| `-d, --depth NUM`       | Limit depth levels    | `fstree -d 3`            |
+| `-a, --all`             | Show hidden files     | `fstree -a`              |
+| `-e, --exclude PATTERN` | Exclude files/folders | `fstree -e node_modules` |
+| `-h, --help`            | Show help             | `fstree --help`          |
+| `-V, --version`         | Show version          | `fstree --version`       |
 
 ## 📄 License
 
