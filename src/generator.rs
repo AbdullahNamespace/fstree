@@ -70,16 +70,24 @@ impl Generator {
                 let entry = entry?;
                 let entry_path = entry.path();
 
+                let entry_name = entry_path
+                    .file_name()
+                    .and_then(|n| n.to_str())
+                    .unwrap_or("");
+
                 if !self.config.all {
-                    if let Some(file_name) = entry_path.file_name() {
-                        if file_name
-                            .to_str()
-                            .map(|s| s.starts_with('.'))
-                            .unwrap_or(false)
-                        {
-                            continue;
-                        }
+                    if entry_name.starts_with('.') {
+                        continue;
                     }
+                }
+
+                if self
+                    .config
+                    .exclude
+                    .iter()
+                    .any(|pattern| entry_name == pattern)
+                {
+                    continue;
                 }
 
                 match self.build_tree(&entry_path, current_depth + 1) {

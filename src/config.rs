@@ -13,4 +13,12 @@ pub struct TreeConfig {
 
     #[arg(short = 'a', long = "all")]
     pub all: bool,
+
+    #[arg(
+        short = 'e',
+        long = "exclude",
+        value_name = "PATTERN",
+        help = "Exclude files or folders by name"
+    )]
+    pub exclude: Vec<String>,
 }
