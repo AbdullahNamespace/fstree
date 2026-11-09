@@ -27,7 +27,7 @@ cargo install fstree
 Or build from source:
 
 ```bash
-git clone https://github.com/your-username/fstree.git
+git clone https://github.com/AbdullahNamespace/fstree.git
 cd fstree
 cargo install --path .
 ```
